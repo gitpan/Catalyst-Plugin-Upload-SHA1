@@ -1,0 +1,25 @@
+<!DOCTYPE
+   html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>Catalyst Upload SHA1 Demo</title>
+  </head>
+  <body>
+    <form action="/upload"
+          method="post"
+          enctype="multipart/form-data">
+      
+      <fieldset>
+        <legend>Select a file to upload...</legend>
+        <label for="upload_file">File:</label>
+        
+        <input type="file" name="file" />
+        <input type="submit" />
+      </fieldset>
+      [% IF sha1sum %]
+      <p>The SHA1 sum of <tt>[% filename %]</tt> is <tt>[% sha1sum %]</tt></p>
+      [% END %]
+    </form>
+  </body>
+</html>
